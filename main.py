@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from pymongo import MongoClient
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -8,7 +9,6 @@ client = MongoClient('mongodb://localhost:27017/')
 db = client['assure_db']  
 
 
-import pandas as pd
 
 csv_path = 'assignment_raw_rate.csv'
 df = pd.read_csv(csv_path)
