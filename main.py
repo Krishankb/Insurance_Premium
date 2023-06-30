@@ -13,7 +13,7 @@ import pandas as pd
 csv_path = 'assignment_raw_rate.csv'
 df = pd.read_csv(csv_path)
 
-collection = db['premium_rates']  # Replace 'premium_rates' with your desired collection name
+collection = db['premium_rates']  
 
 data = df.to_dict('records')
 
