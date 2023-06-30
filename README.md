@@ -3,7 +3,7 @@ This project is a Insurance premium calculator web application built with Flask,
 
 ## Steps to Run:
 1. Clone the repository to your local machine using the "git clone" command. 
-2. Ensure you have the required dependencies installed (Flask, MongoDB).
+2. Ensure you have the required dependencies installed (Flask, pymongo , pandas).
 3. Open the project directory in your preferred code editor.
 4. Run the main.py file using the command "python main.py".
 5. Access the application by opening the provided URL(localhost) in a web browser.
