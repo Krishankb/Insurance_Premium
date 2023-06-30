@@ -12,14 +12,18 @@ This project is a Insurance premium calculator web application built with Flask,
 
 
 Screenshot of working Project : 
+
 2 Adults - 1 child 
+
 Input : ![Insurance_Premium1](https://github.com/Krishankb/Insurance_Premium/assets/30771097/9664b017-936f-4052-b0bd-6cea50814e41)
 Output : ![Insurance_Premium12](https://github.com/Krishankb/Insurance_Premium/assets/30771097/328a8d19-56eb-4fb8-afc2-bbcc83226de6)
 
 1 Adult
+
 Input : ![Insurance_Premium2](https://github.com/Krishankb/Insurance_Premium/assets/30771097/922eef81-b572-4981-8fce-edc64c44364d)
 Output : ![Insurance_Premium22](https://github.com/Krishankb/Insurance_Premium/assets/30771097/9380fe72-536b-4330-a486-dc3dca0a02c4)
 
 2 Adults - 4 children 
+
 Input : ![Insurance_Premium3](https://github.com/Krishankb/Insurance_Premium/assets/30771097/855bae29-eda5-406e-b2d3-8b933e613714)
 Output : ![Insurance_Premium32](https://github.com/Krishankb/Insurance_Premium/assets/30771097/4fa05a6d-7dae-448e-a277-ed06f2147f82)
