@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # Connect to MongoDB
 client = MongoClient('mongodb://localhost:27017/')
-db = client['assure_db2']  
+db = client['assure_db']  
 
 
 import pandas as pd
