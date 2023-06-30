@@ -5,24 +5,21 @@ app = Flask(__name__)
 
 # Connect to MongoDB
 client = MongoClient('mongodb://localhost:27017/')
-db = client['assure_db2']  # Replace 'insurance_db' with your desired database name
+db = client['assure_db2']  
 
-# Step 2.1: Read the CSV file
+
 import pandas as pd
 
 csv_path = 'assignment_raw_rate.csv'
 df = pd.read_csv(csv_path)
 
-# Step 2.2: Load CSV data into MongoDB collection
 collection = db['premium_rates']  # Replace 'premium_rates' with your desired collection name
 
-# Convert the DataFrame to a dictionary for easy insertion
 data = df.to_dict('records')
 
-# Insert the data into the MongoDB collection
 collection.insert_many(data)
 
-# Route for the home page
+# home page
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -72,8 +69,9 @@ def base_rate(age,tenure,sum_insured,tier):
         
     else:
         print("Rate not found.")
+        return None
 
-# Route for calculating premium
+# calculating premium
 @app.route('/calculate_premium', methods=['POST'])
 def calculate_premium():
     adult_1_age = int(request.form['adult_1_age'])
@@ -93,17 +91,6 @@ def calculate_premium():
             child_ages[f'child_age_{i}'] = int(request.form.get(f'child_age_{i}', 0))
     
     premium = calculate_premium_logic(adult_1_age, adult_2_age, city_tier, sum_insured, tenure, num_children, child_ages)
-
-    # Save premium details to MongoDB
-    # premium_data = {
-    #     'adult_1_age': adult_1_age,
-    #     'adult_2_age': adult_2_age,
-    #     'city_tier': city_tier,
-    #     'sum_insured': sum_insured,
-    #     'tenure': tenure,
-    #     'premium': premium
-    # }
-    # collection.insert_one(premium_data)
 
     return render_template('result.html', premium=premium)
 
