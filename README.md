@@ -10,6 +10,13 @@ This project is a Insurance premium calculator web application built with Flask,
 6. Interact with the web interface to calculate insurance premiums.
 7. View the calculated premium on the result page and other details on the terminal.
 
+API Endpoints : 
+
+1. `/`: The home endpoint that serves the main page of the premium calculator web application. Users can input their age, city tier, sum insured, tenure, and select if they have children.If children checkbox is selected then new input text field is displayed , it takes the number of children as input and based on the number of children a new input text field is displayed for each child age.
+
+2. `/calculate_premium`: This endpoint handles the calculation of the insurance premium based on the user inputs. It collects data such as adult ages, city tier, sum insured, tenure, and optional child ages. The premium is calculated using a custom logic and displayed on the result page.
+
+These endpoints provide the core functionality of the premium calculator web application, allowing users to input their information and receive the calculated premium.
 
 Screenshot of working Project : 
 
