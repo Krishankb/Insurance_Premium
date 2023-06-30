@@ -27,7 +27,6 @@ def home():
 def calculate_premium_logic(adult_1_age, adult_2_age, city_tier, sum_insured, tenure, num_children, child_ages):
     # print(adult_1_age, adult_2_age, city_tier, sum_insured, tenure, num_children, child_ages)
     adult_2_discount = 0
-    #Logic of the Assignment
     if(adult_1_age > 0 )or ( adult_2_age > 0 ):
         if(adult_1_age > adult_2_age):
             adult_1_discount = base_rate(adult_1_age,tenure,sum_insured,city_tier)
