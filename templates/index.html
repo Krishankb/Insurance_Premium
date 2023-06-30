@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Premium Calculator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function toggleChildrenInput() {
+            var checkbox = document.getElementById('children_checkbox');
+            var childrenInput = document.getElementById('children_input');
+
+            childrenInput.style.display = checkbox.checked ? 'block' : 'none';
+        }
+
+        function createChildAgeInputs() {
+            var numChildren = document.getElementById('num_children').value;
+            var childAgesContainer = document.getElementById('child_ages_container');
+
+            childAgesContainer.innerHTML = '';
+
+            for (var i = 1; i <= numChildren; i++) {
+                var label = document.createElement('label');
+                label.setAttribute('for', 'child_age_' + i);
+                label.innerText = 'Child ' + i + ' Age:';
+
+                var input = document.createElement('input');
+                input.setAttribute('type', 'number');
+                input.setAttribute('name', 'child_age_' + i);
+                input.setAttribute('id', 'child_age_' + i);
+
+                childAgesContainer.appendChild(label);
+                childAgesContainer.appendChild(input);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Premium Calculator</h1>
+    <form action="/calculate_premium" method="POST">
+        <label for="adult_1_age">Adult 1 Age:</label>
+        <input type="number" name="adult_1_age" id="adult_1_age">
+        <label for="adult_2_age">Adult 2 Age:</label>
+        <input type="number" name="adult_2_age" id="adult_2_age">
+        <label for="children">Children:</label>
+        <input type="checkbox" name="children" id="children_checkbox" onchange="toggleChildrenInput()">
+        <div id="children_input" style="display: none;">
+            <label for="num_children">Number of Children:</label>
+            <input type="number" name="num_children" id="num_children" onchange="createChildAgeInputs()">
+            <div id="child_ages_container"></div>
+        </div>
+        <label for="city_tier">City Tier:</label>
+        <select name="city_tier" id="city_tier">
+            <option value="1">Tier 1</option>
+            <option value="2">Tier 2</option>
+        </select>
+        <label for="sum_insured">Sum Insured:</label>
+        <select name="sum_insured" id="sum_insured">
+            <option value="300000">300000</option>
+            <option value="400000">400000</option>
+            <option value="500000">500000</option>
+        </select>
+        <label for="tenure">Tenure:</label>
+        <select name="tenure" id="tenure">
+            <option value="1">1 Year</option>
+            <option value="2">2 Years</option>
+        </select>
+        <input type="submit" value="Calculate Premium">
+    </form>
+</body>
+</html>
